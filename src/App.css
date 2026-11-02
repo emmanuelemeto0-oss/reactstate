@@ -1,0 +1,191 @@
+.profile-app {
+  --ink: #24352f;
+  --muted: #64736c;
+  --accent: #c06442;
+  --paper: #f5f3ed;
+
+  box-sizing: border-box;
+  display: grid;
+  min-height: 100vh;
+  width: 100%;
+  place-items: center;
+  padding: 56px 24px;
+  color: var(--ink);
+  background:
+    radial-gradient(
+      ellipse at 85% 12%,
+      rgba(203, 218, 198, 0.72),
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse at 5% 90%,
+      rgba(239, 209, 184, 0.66),
+      transparent 34%
+    ),
+    var(--paper);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.profile-content {
+  width: min(100%, 680px);
+  margin: auto;
+}
+
+.profile-app .eyebrow,
+.profile-label {
+  margin: 0;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.profile-app h1 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 7vw, 58px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.08;
+}
+
+.intro-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.toggle-button {
+  min-height: 48px;
+  margin: 28px 0 0;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  background: var(--ink);
+  box-shadow: 0 8px 18px rgba(36, 53, 47, 0.16);
+  cursor: pointer;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.toggle-button:hover {
+  background: #355247;
+  transform: translateY(-2px);
+}
+
+.toggle-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 36px auto 0;
+  padding: 28px;
+  border: 1px solid rgba(36, 53, 47, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 22px 55px rgba(46, 57, 48, 0.13);
+  text-align: left;
+  animation: profile-enter 280ms ease both;
+}
+
+.profile-image {
+  flex: 0 0 auto;
+  width: 176px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-details {
+  min-width: 0;
+}
+
+.profile-app .profile-details h2 {
+  margin: 8px 0 3px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.profession {
+  margin: 0;
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.bio {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.elapsed-time {
+  margin: 30px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.elapsed-time span {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+@keyframes profile-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 560px) {
+  .profile-app {
+    padding: 40px 18px;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .profile-image {
+    width: 144px;
+  }
+
+  .profile-app .profile-details h2 {
+    font-size: 27px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
